@@ -1,11 +1,11 @@
 export default {
-  install(Vue, options) {
+  install (Vue, options) {
     Vue.prototype.$message = (html) => {
-      M.toast({html})
+      M.toast({ html })
     }
 
     Vue.prototype.$error = (html) => {
-      M.toast({html: `[Ошибка]: ${html}`})
+      M.toast({ html: `[Ошибка]: ${html}` })
     }
   }
 }
