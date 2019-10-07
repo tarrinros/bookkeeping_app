@@ -67,9 +67,11 @@ export default {
     email: { email, required },
     password: { required, minLength: minLength(6) }
   },
+  mounted() {
+    this.$error('Test')
+  },
   methods: {
     submitHandler () {
-      console.log(this.$v.password)
       if (this.$v.$invalid) {
         this.$v.$touch()
         return
