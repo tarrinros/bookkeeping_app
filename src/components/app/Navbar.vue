@@ -60,7 +60,7 @@ export default {
       constrainWidth: true
     })
   },
-  // For desrtoy plugins
+  // For destroy plugins
   beforeDestroy () {
     clearInterval(this.interval)
     if (this.dropdown && this.dropdown.destroy) {
