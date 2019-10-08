@@ -2,9 +2,10 @@ import Vue from 'vue'
 import Vuelidate from 'vuelidate'
 import App from './App.vue'
 import router from './router'
-import dateFilter from '@/filters/date.filter'
+import dateFilter from './filters/date.filter'
 import store from './store'
-import messagePlugin from '@/utils/message.plugin'
+import messagePlugin from './utils/message.plugin'
+import Loader from './components/app/Loader'
 import './registerServiceWorker'
 import 'materialize-css/dist/js/materialize.min'
 
@@ -18,6 +19,7 @@ Vue.use(Vuelidate)
 Vue.use(messagePlugin)
 
 Vue.filter('date', dateFilter)
+Vue.component('Loader', Loader)
 
 firebase.initializeApp({
   apiKey: 'AIzaSyBh6KzX9woFFho-LymTgX9mPymz9EKVgyM',
