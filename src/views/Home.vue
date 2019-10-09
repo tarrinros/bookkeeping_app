@@ -27,6 +27,10 @@ export default {
     loading: true,
     currency: null
   }),
+  async mounted() {
+    this.currency = await this.$store.dispatch('fetchCurrency')
+    this.loading = false
+  },
   components: {
     HomeBill, HomeCurrency
   }
