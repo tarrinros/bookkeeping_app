@@ -15,7 +15,10 @@
         :rates="currency.rates"
       />
 
-      <HomeCurrency />
+      <HomeCurrency
+        :rates="currency.rates"
+        :date="currency.date"
+      />
     </div>
   </div>
 </template>
@@ -32,7 +35,6 @@ export default {
   }),
   async mounted() {
     this.currency = await this.$store.dispatch('fetchCurrency')
-    console.log(this.currency)
     this.loading = false
   },
   components: {
