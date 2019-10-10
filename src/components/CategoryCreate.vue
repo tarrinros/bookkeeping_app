@@ -77,9 +77,13 @@ export default {
         const category = await this.$store.dispatch('createCategory', formData)
         this.title = ''
         this.limit = 100
+
         // Resets the form state
         this.$v.$reset()
         this.$message('Категория была создана')
+
+        // Categories listen @created event from component
+        this.$emit('created', category)
         // this.$router.push('/categories')
       } catch (e) {}
     }
