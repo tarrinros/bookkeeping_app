@@ -43,7 +43,7 @@
 
 <script>
 import {requred, minValue} from 'vuelidate/lib/validators'
-import { METHODS } from 'http'
+
 export default {
   data: () => ({
     title: '',
@@ -52,6 +52,9 @@ export default {
   validations: {
     title: {requred},
     limit: {minValue: minValue(1)}
+  },
+  mounted() {
+    M.updateTextFields()
   },
   methods: {
     submitHandler () {
