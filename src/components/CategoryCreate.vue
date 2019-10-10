@@ -14,9 +14,12 @@
               :class="{invalid: $v.title.dirty && $v.title.required}"
           >
           <label for="name">Название</label>
-          <span 
+          <small
             v-if="$v.title.dirty && $v.title.required"
-            class="helper-text invalid">Введите название категории</span>
+            class="helper-text invalid"
+          >
+          Введите название категории
+          </small>
         </div>
 
         <div class="input-field">
@@ -27,9 +30,12 @@
               :class="{invalid: $v.limit.dirty && $v.limit.minValue}"
           >
           <label for="limit">Лимит</label>
-          <span 
+          <small
             v-if="$v.limit.dirty && $v.limit.minValue"
-            class="helper-text invalid">Вы ввели неверную минимальную величину. Должно быть не меньше {{$v.limit.$params.minValue.min}}</span>
+            class="helper-text invalid"
+          >
+          Минимальная величина {{$v.limit.$params.minValue.min}}
+          </small>
         </div>
 
         <button class="btn waves-effect waves-light" type="submit">
@@ -38,34 +44,35 @@
         </button>
       </form>
     </div>
-  </div>  
+  </div>
 </template>
 
 <script>
-import {requred, minValue} from 'vuelidate/lib/validators'
+import { requred, minValue } from 'vuelidate/lib/validators'
 
 export default {
   data: () => ({
     title: '',
-    limit: 1
+    limit: 100
   }),
   validations: {
-    title: {requred},
-    limit: {minValue: minValue(1)}
+    title: { requred },
+    limit: { minValue: minValue(100) }
   },
-  mounted() {
+  mounted () {
     M.updateTextFields()
   },
   methods: {
     submitHandler () {
-        if (this.$v.$invalid) {
+      console.log(this.$v.limit)
+      if (this.$v.$invalid) {
         this.$v.$touch()
         return
       }
-      const formData = {
-        title: this.title,
-        limit: this.limit
-      }
+      // const formData = {
+      //   title: this.title,
+      //   limit: this.limit
+      // }
     }
   }
 }
