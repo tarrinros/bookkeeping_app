@@ -11,15 +11,15 @@
               id="name"
               type="text"
               v-model="title"
-              :class="{invalid: $v.title.dirty && $v.title.required}"
+              :class="{invalid: $v.title.$dirty && !$v.title.required}"
           >
           <label for="name">Название</label>
-          <small
-            v-if="$v.title.dirty && $v.title.required"
+          <span
+            v-if="$v.title.$dirty && !$v.title.required"
             class="helper-text invalid"
           >
           Введите название категории
-          </small>
+          </span>
         </div>
 
         <div class="input-field">
@@ -27,15 +27,15 @@
               id="limit"
               type="number"
               v-model="limit"
-              :class="{invalid: $v.limit.dirty && $v.limit.minValue}"
+              :class="{invalid: $v.limit.$dirty && !$v.limit.minValue}"
           >
           <label for="limit">Лимит</label>
-          <small
-            v-if="$v.limit.dirty && $v.limit.minValue"
+          <span
+            v-if="$v.limit.$dirty && !$v.limit.minValue"
             class="helper-text invalid"
           >
           Минимальная величина {{$v.limit.$params.minValue.min}}
-          </small>
+          </span>
         </div>
 
         <button class="btn waves-effect waves-light" type="submit">
@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { requred, minValue } from 'vuelidate/lib/validators'
+import { required, minValue } from 'vuelidate/lib/validators'
 
 export default {
   data: () => ({
@@ -56,7 +56,7 @@ export default {
     limit: 100
   }),
   validations: {
-    title: { requred },
+    title: { required },
     limit: { minValue: minValue(100) }
   },
   mounted () {
