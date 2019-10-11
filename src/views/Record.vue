@@ -8,7 +8,7 @@
     <form v-else class="form">
       <div class="input-field" >
         <select ref="select">
-          <option v-for="c of categories"
+          <option v-for="c of categories" v-model="category"
           :key="c.id"
           :value="c.id"
           >{{c.title}}</option>
@@ -73,11 +73,16 @@ export default {
   data: () => ({
     select: null,
     categories: [],
+    category: null,
     loading: true
   }),
   async mounted () {
     this.categories = await this.$store.dispatch('fetchCategories')
     this.loading = false
+
+    if (this.categories.length) {
+      this.category = this.categories[0].id
+    }
 
     // Necessery for correct rendering the select form
     setTimeout(() => {
