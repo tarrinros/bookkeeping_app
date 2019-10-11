@@ -85,6 +85,7 @@
 
 <script>
 import { required, minValue } from 'vuelidate/lib/validators'
+import {mapGetters} from 'vuex'
 
 export default {
   name: 'record',
@@ -115,11 +116,39 @@ export default {
       M.updateTextFields()
     }, 0)
   },
+  computed: {
+    ...mapGetters(['info']),
+    canCreateRecord () {
+      if (this.type === 'income') {
+        return true
+      }
+      return this.info.bill >= this.amount
+    }
+  },
   methods: {
     async submitHandler () {
       if (this.$v.$invalid) {
         this.$v.$touch()
         return
+      }
+      if (this.canCreateRecord) {
+        try {
+          await this.$store.dispatch('createRecord', {
+            categoryId: this.category,
+            amount: this.amount,
+            description: this.description,
+            type: this.type,
+            date: new Date().toJSON()
+          })
+          const updatedBill = this.type === 'income'
+            ? this.info.bill + this.info.amount
+            : this.info.bill - this.info.amount
+
+          await this.$store.dispatch('updateInfo', {bill})
+          this.$message('Запись успешно создана')
+        } catch (e) {}
+      } else {
+        this.$message(`Недостаточно средств на счете(${this.amount - this.info.bill})`)
       }
     }
   },
