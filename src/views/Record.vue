@@ -140,12 +140,15 @@ export default {
             type: this.type,
             date: new Date().toJSON()
           })
-          const updatedBill = this.type === 'income'
-            ? this.info.bill + this.info.amount
-            : this.info.bill - this.info.amount
+          const bill = this.type === 'income'
+            ? this.info.bill + this.amount
+            : this.info.bill - this.amount
 
           await this.$store.dispatch('updateInfo', {bill})
           this.$message('Запись успешно создана')
+          this.$v.$reset()
+          this.amount = 1
+          this.description = ''
         } catch (e) {}
       } else {
         this.$message(`Недостаточно средств на счете(${this.amount - this.info.bill})`)
