@@ -102,15 +102,20 @@ export default {
   },
   methods: {
     async submitHandler () {
-      console.log(this.$v.limit)
       if (this.$v.$invalid) {
         this.$v.$touch()
         return
       }
-      const formData = {
-        title: this.title,
-        limit: this.limit
-      }
+      try {
+        const categoryData = {
+          id: this.current,
+          title: this.title,
+          limit: this.limit
+        }
+        await this.$store.dispatch('updateCategory', categoryData)
+        this.$message('Категория успешно обновлена')
+        this.$emit('updated', categoryData)
+      } catch (e) {}
     }
   }
 }
