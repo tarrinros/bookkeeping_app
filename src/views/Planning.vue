@@ -15,7 +15,7 @@
           <strong>{{cat.title}}:</strong>
           {{cat.spend}} из {{cat.limit}}
         </p>
-        <div class="progress" >
+        <div class="progress">
           <div
               class="determinate"
               :class="[cat.progressColor]"
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   name: 'planning',
   data: () => ({
@@ -47,15 +47,16 @@ export default {
         .filter(r => r.categoryId === cat.id)
         .filter(r => r.type === 'outcome')
         .reduce((total, record) => {
-            return total += +record.amount
-          }, 0)
+          total += +record.amount
+          return total
+        }, 0)
 
       const percent = 100 * spend / cat.limit
       const progressPercent = percent > 100 ? 100 : percent
-      const progressColor = percent < 60 
-        ? 'green' 
-        : percent < 100 
-          ? 'yellow' 
+      const progressColor = percent < 60
+        ? 'green'
+        : percent < 100
+          ? 'yellow'
           : 'red'
 
       return {
@@ -67,6 +68,6 @@ export default {
     })
 
     this.loading = false
-  },
+  }
 }
 </script>

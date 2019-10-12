@@ -10,8 +10,8 @@
 
     <form v-else class="form" @submit.prevent="submitHandler">
       <div class="input-field" >
-        <select ref="select">
-          <option v-for="c of categories" v-model="category"
+        <select ref="select" v-model="category">
+          <option v-for="c of categories"
           :key="c.id"
           :value="c.id"
           >{{c.title}}</option>

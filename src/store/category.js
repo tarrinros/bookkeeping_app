@@ -2,7 +2,7 @@ import firebase from 'firebase/app'
 
 export default {
   actions: {
-    async fetchCategories ({dispatch, commit}) {
+    async fetchCategories ({ dispatch, commit }) {
       try {
         const uid = await dispatch('getUserId')
         const categories =
@@ -12,17 +12,17 @@ export default {
             .val() || {}
 
         // Reformat categories id`s to 1, 2, 3...
-        return Object.keys(categories).map(key => ({...categories[key], id: key}))
+        return Object.keys(categories).map(key => ({ ...categories[key], id: key }))
       } catch (e) {}
     },
-    async createCategory ({dispatch, commit}, {title, limit}) {
+    async createCategory ({ dispatch, commit }, { title, limit }) {
       try {
         const uid = await dispatch('getUserId')
         const category = await firebase.database().ref(`/users/${uid}/categories`).push({
           title,
           limit
         })
-        return {title, limit, id: category.key}
+        return { title, limit, id: category.key }
       } catch (e) {
         commit ('setError', e)
         throw e
