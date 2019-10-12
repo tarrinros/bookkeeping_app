@@ -84,7 +84,6 @@ export default {
 
         // Categories listen @created event from component
         this.$emit('created', category)
-        // this.$router.push('/categories')
       } catch (e) {}
     }
   }

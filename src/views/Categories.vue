@@ -8,7 +8,13 @@
       <div class="row" v-else>
         <CategoryCreate @created="addNewCategory" />
 
-        <CategoryEdit :categories="categories"/>
+        <CategoryEdit
+          v-if="this.categories.length"
+          :categories="categories"
+          :key="this.categories.length + updateCount"
+          @updated="updateCategories"
+        />
+        <p v-else class="center">Категорий пока нет</p>
       </div>
     </section>
   </div>
@@ -22,7 +28,8 @@ export default {
   name: 'categories',
   data: () => ({
     categories: [],
-    loading: true
+    loading: true,
+    updateCount: 0
   }),
   components: {
     CategoryCreate, CategoryEdit
@@ -34,6 +41,12 @@ export default {
   methods: {
     addNewCategory (category) {
       this.categories.push(category)
+    },
+    updateCategories (category) {
+      const idx = this.categories.findIndex(c => c.id === category.id)
+      this.categories[idx].title = category.title
+      this.categories[idx].limit = category.limit
+      this.updateCount++
     }
   }
 }
