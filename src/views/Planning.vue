@@ -1,12 +1,15 @@
 <template>
-  <Loader v-if="loading" />
-  <div v-else>
+  <div>
     <div class="page-title">
       <h3>Планирование</h3>
       <h4>12 212</h4>
     </div>
 
-    <section>
+    <Loader v-if="loading" />
+
+    <p v-else-if="!categories.length" class="center">Категорий пока нет <router-link to="/categories">Добавить категорию.</router-link></p>
+
+    <section v-else>
       <div>
         <p>
           <strong>Двушка:</strong>
@@ -31,7 +34,9 @@ export default {
     categories: []
   }),
   async mounted () {
+  this.records = await this.$store.dispatch('fetchRecords')
   this.categories = await this.$store.dispatch('fetchCategories')
+  debugger
   this.loading = false
   },
 }
