@@ -13,13 +13,13 @@
       <div v-for="cat of categories" :key="cat.id">
         <p>
           <strong>{{cat.title}}:</strong>
-          {{cat.spend}} из {{cat.limit}}
+          {{cat.spend | currency}} из {{cat.limit | currency}}
         </p>
         <div class="progress">
           <div
               class="determinate"
               :class="[cat.progressColor]"
-              :style="{width: cat.progressPercent}"
+              :style="{width: cat.progressPercent + '%'}"
           ></div>
         </div>
       </div>
