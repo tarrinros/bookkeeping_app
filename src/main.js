@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
+import Paginate from 'vuejs-paginate'
 import App from './App.vue'
 import router from './router'
 import dateFilter from './filters/date.filter'
@@ -26,6 +27,7 @@ Vue.filter('date', dateFilter)
 Vue.filter('currency', currencyFilter)
 
 Vue.component('Loader', Loader)
+Vue.component('paginate', Paginate)
 
 firebase.initializeApp({
   apiKey: 'AIzaSyBh6KzX9woFFho-LymTgX9mPymz9EKVgyM',
