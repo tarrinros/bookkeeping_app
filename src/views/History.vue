@@ -10,8 +10,9 @@
 
     <Loader v-if="loading"/>
 
+    <p v-else-if="!records.length">Записей пока нет</p>
     <section v-else>
-      <HistoryTable :recods="records"/>
+      <HistoryTable :records="records"/>
     </section>
   </div>
 </template>
@@ -35,7 +36,7 @@ export default {
         ...record,
         categoryName: this.categories.find(c => c.id === record.categoryId).title,
         typeClass: record.type === 'income' ? 'green' : 'red',
-        infoText: record.type === 'income' ? 'доход' : 'расход'
+        typeText: record.type === 'income' ? 'доход' : 'расход'
       }
     })
 
