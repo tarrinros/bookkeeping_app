@@ -27,7 +27,7 @@ Vue.filter('date', dateFilter)
 Vue.filter('currency', currencyFilter)
 
 Vue.component('Loader', Loader)
-Vue.component('paginate', Paginate)
+Vue.component('Paginate', Paginate)
 
 firebase.initializeApp({
   apiKey: 'AIzaSyBh6KzX9woFFho-LymTgX9mPymz9EKVgyM',

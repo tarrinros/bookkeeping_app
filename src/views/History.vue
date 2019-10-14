@@ -16,6 +16,15 @@
     </p>
     <section v-else>
       <HistoryTable :records="records"/>
+
+      <Paginate
+        :page-count="20"
+        :click-handler="pageChangeHandler"
+        :prev-text="'Назад'"
+        :next-text="'Вперед'"
+        :container-class="'pagination'"
+        :page-class="'waves-effect'"
+      />
     </section>
   </div>
 </template>
@@ -44,6 +53,11 @@ export default {
     })
 
     this.loading = false
+  },
+  methods: {
+    pageChangeHandler() {
+
+    }
   },
   components: {
     HistoryTable
