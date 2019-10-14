@@ -15,6 +15,20 @@ export default {
         return Object.keys(categories).map(key => ({ ...categories[key], id: key }))
       } catch (e) {}
     },
+    async fetchCategoryById ({ dispatch, commit }, id) {
+      try {
+        const uid = await dispatch('getUserId')
+        const category =
+          (await firebase.database()
+            .ref(`/users/${uid}/categories`)
+            .child(id)
+            .once('value'))
+            .val() || {}
+
+        // Reformat categories id`s to 1, 2, 3...
+        return { ...category, id: id }
+      } catch (e) {}
+    },
     async createCategory ({ dispatch, commit }, { title, limit }) {
       try {
         const uid = await dispatch('getUserId')
