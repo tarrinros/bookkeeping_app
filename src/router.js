@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import firebase from 'firebase/app'
-import record from './store/record'
 
 Vue.use(Router)
 
@@ -18,7 +17,7 @@ const router = new Router({
     {
       path: '/register',
       name: 'register',
-      meta: { layout: 'empty', auth: true },
+      meta: { layout: 'empty' },
       component: () => import('./views/Register.vue')
     },
     {

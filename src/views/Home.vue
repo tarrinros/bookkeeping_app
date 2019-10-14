@@ -26,6 +26,7 @@
 <script>
 import HomeBill from '@/components/HomeBill'
 import HomeCurrency from '@/components/HomeCurrency'
+import messages from '@/utils/messages'
 
 export default {
   name: 'home',
@@ -36,6 +37,10 @@ export default {
   async mounted () {
     this.currency = await this.$store.dispatch('fetchCurrency')
     this.loading = false
+    
+    if (messages[this.$route.query.message]) {
+      this.$message(messages[this.$route.query.message])
+    }
   },
   methods: {
     async refresh () {
