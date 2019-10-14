@@ -8,8 +8,10 @@
       <canvas></canvas>
     </div>
 
-    <section>
-      <HistoryTable/>
+    <Loader v-if="loading"/>
+
+    <section v-else>
+      <HistoryTable :recods="records"/>
     </section>
   </div>
 </template>
@@ -33,7 +35,7 @@ export default {
         ...record,
         categoryName: this.categories.find(c => c.id === record.categoryId).title,
         typeClass: record.type === 'income' ? 'green' : 'red',
-        infoClass: record.type === 'income' ? 'доход' : 'расход'
+        infoText: record.type === 'income' ? 'доход' : 'расход'
       }
     })
 
