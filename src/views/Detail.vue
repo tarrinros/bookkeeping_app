@@ -23,3 +23,24 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'detail',
+  data: () => ({
+    loading: true,
+    record: null
+  }),
+  async mounted () {
+    const id = this.$route.params.id
+    const record = await this.$store.dispatch('fetchRecordById', id)
+    const category = await this.$store.dispatch('fetchCategoryById', record.categoryId )
+
+    this.record = {
+      ...record,
+      categoryTitle: category.title
+    }
+    this.loading = false
+  }
+}
+</script>
