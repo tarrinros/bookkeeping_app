@@ -18,7 +18,7 @@
       <HistoryTable :records="items"/>
 
       <Paginate
-        :page-count="20"
+        :page-count="pageCount"
         :click-handler="pageChangeHandler"
         :prev-text="'Назад'"
         :next-text="'Вперед'"
@@ -35,7 +35,7 @@ import HistoryTable from '@/components/HistoryTable'
 
 export default {
   name: 'history',
-  mixin: [paginationMixin],
+  mixins: [paginationMixin],
   data: () => ({
     loading: true,
     records: []
@@ -43,6 +43,7 @@ export default {
   async mounted () {
     this.records = await this.$store.dispatch('fetchRecords')
     const categories = await this.$store.dispatch('fetchCategories')
+
     this.setupPagination(this.records.map(record => {
       return {
         ...record,

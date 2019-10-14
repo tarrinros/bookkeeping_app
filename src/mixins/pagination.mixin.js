@@ -1,7 +1,7 @@
 import _ from 'lodash'
 
 export default {
-  data() {
+  data () {
     return {
       page: 1,
       pageSize: 5,
@@ -15,7 +15,7 @@ export default {
       this.allItems = _.chunk(allItems, this.pageSize)
       this.pageCount = _.size(this.allItems)
       // Chooses first index of the allItems array
-      this.items = this.allItems[this.pageCount - 1] || this.allItems[0]
+      this.items = this.allItems[this.page - 1] || this.allItems[0]
     }
   }
 }
