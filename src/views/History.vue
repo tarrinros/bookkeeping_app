@@ -10,7 +10,10 @@
 
     <Loader v-if="loading"/>
 
-    <p v-else-if="!records.length">Записей пока нет</p>
+    <p v-else-if="!records.length" class="center">
+    Записей пока нет.
+    <router-link to="/record">Добавьте первую</router-link>
+    </p>
     <section v-else>
       <HistoryTable :records="records"/>
     </section>
