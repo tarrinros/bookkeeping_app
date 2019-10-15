@@ -9,6 +9,7 @@
         <input
             id="description"
             type="text"
+            v-model="name"
         >
         <label for="description">Имя</label>
         <span
@@ -17,10 +18,10 @@
 
       <div class="switch">
         <label>
-          Off
+          English
           <input type="checkbox">
           <span class="lever"></span>
-          On
+          Русский
         </label>
       </div>
 
@@ -31,3 +32,24 @@
     </form>
   </div>
 </template>
+
+<script>
+import {mapGetters} from 'vuex'
+export default {
+  data: () => ({
+    name: ''
+  }),
+  mounted () {
+    this.name = this.info.name
+  },
+  computed: {
+    ...mapGetters(['info'])
+  }
+}
+</script>
+
+<style scoped>
+  .switch {
+    margin-bottom: 2rem;
+  }
+</style>
