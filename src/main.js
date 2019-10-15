@@ -5,6 +5,7 @@ import App from './App.vue'
 import router from './router'
 import dateFilter from './filters/date.filter'
 import currencyFilter from './filters/currency.filter'
+import localizeFilter from './filters/localize.filter'
 import tooltipDirective from './directives/tooltip.directive'
 import paginationMixin from './mixins/pagination.mixin'
 import store from './store'
@@ -26,6 +27,7 @@ Vue.directive('tooltip', tooltipDirective)
 
 Vue.filter('date', dateFilter)
 Vue.filter('currency', currencyFilter)
+Vue.filter('localize', localizeFilter)
 
 Vue.mixin('pagination', paginationMixin)
 
