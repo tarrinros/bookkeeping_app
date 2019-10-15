@@ -13,9 +13,9 @@
             :class="{invalid: ($v.name.$dirty && !$v.name.required)}"
         >
         <label for="description">Имя</label>
-        <span class="helper-text invalid"
+        <small class="helper-text invalid"
                v-if="$v.name.$dirty && !$v.name.required"
-        >Поле Name не должно быть пустым</span>
+        >Введите имя</small>
       </div>
 
       <div class="switch">
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import { required } from 'vuelidate/lib/validators'
 
 export default {
@@ -56,13 +56,16 @@ export default {
     ...mapGetters(['info'])
   },
   methods: {
+    ...mapActions(['updateInfo']),
     async submitHandler () {
       if (this.$v.$invalid) {
         this.$v.$touch()
         return
       }
       try {
-        await this.$store.dispatch('login', { name: name })
+        await this.updateInfo({
+          name: this.name
+        })
       } catch (e) {}
     }
   }
