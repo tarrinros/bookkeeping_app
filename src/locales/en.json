@@ -1,3 +1,9 @@
 {
-  "ProfileTitle": "Profile"
+  "ProfileTitle": "Profile",
+  "SideBar_Bill": "Bill",
+  "SideBar_History": "History",
+  "SideBar_Planning": "Planning",
+  "SideBar_NewRecord": "New Record",
+  "SideBar_Categories": "Categories"
 }
+

@@ -1,3 +1,8 @@
 {
-  "ProfileTitle": "Профиль"
+  "ProfileTitle": "Профиль",
+  "SideBar_Bill": "Счет",
+  "SideBar_History": "История",
+  "SideBar_Planning": "Планирование",
+  "SideBar_NewRecord": "Новая запись",
+  "SideBar_Categories": "Категории"
 }
