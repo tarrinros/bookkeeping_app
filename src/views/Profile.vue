@@ -41,6 +41,9 @@ export default {
   }),
   mounted () {
     this.name = this.info.name
+    setTimeout(() => {
+      M.updateTextFields()
+    }, 0)
   },
   computed: {
     ...mapGetters(['info'])
