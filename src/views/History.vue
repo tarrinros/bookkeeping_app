@@ -64,8 +64,15 @@ export default {
       this.renderChart({
         labels: categories.map(c => c.title),
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Траты по категориям',
+            data: categories.map(c => {
+              return this.records.reduce((total, r) => {
+                if (r.categoryId === c.id && r.type === 'outcome') {
+                  total += +r.amount
+                }
+                return total
+              }, 0)
+            }),
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
