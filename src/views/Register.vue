@@ -82,16 +82,12 @@ export default {
     password: '',
     name: '',
     agree: false,
-    isRuLocale: true
   }),
   validations: {
     email: { email, required },
     password: { required, minLength: minLength(6) },
     name: { required },
     agree: { checked: v => v }
-  },
-  mounted: {
-    this.isRuLocale = this.info.locale === 'ru-RU'
   },
   methods: {
     async submitHandler () {
