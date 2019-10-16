@@ -81,7 +81,7 @@ export default {
     email: '',
     password: '',
     name: '',
-    agree: false,
+    agree: false
   }),
   validations: {
     email: { email, required },

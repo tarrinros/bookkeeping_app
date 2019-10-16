@@ -11,5 +11,21 @@
   "SignUp": "Sign up",
   "Have account?": "Have an account?",
   "Login": "Login!",
-  "Home_CurrencyCount": "Currency"
+  "Home_CurrencyCount": "Currency",
+  "ExchangeCourse": "Exchange course",
+  "Currency": "Currency",
+  "Course": "Course",
+  "Date": "Date",
+  "Bill": "Bill",
+  "Income": "Income",
+  "Outcome": "Outcome",
+  "Amount": "Amount",
+  "MinValue": "Minimal value",
+  "Create": "Create",
+  "Description": "Description",
+  "Desctiption_ChooseTitle": "Please, choose the description title",
+  "Categories_Empty": "There isn`t any categories",
+  "Categories_AddNew": "Add a new one",
+  "Categories_Choose": "Choose",
+  "Record_NewRecord": "New record"
 }

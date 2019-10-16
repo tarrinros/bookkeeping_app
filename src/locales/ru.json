@@ -11,5 +11,21 @@
   "SignUp": "Зарегистрироваться",
   "Have account?": "Уже есть аккаунт?",
   "Login": "Войти!",
-  "Home_CurrencyCount":"Счет в валюте"    
+  "Home_CurrencyCount": "Счет в валюте",    
+  "ExchangeCourse": "Курс валют",
+  "Currency": "Валюта",
+  "Course": "Курс",
+  "Date": "Дата",
+  "Bill": "Счет",
+  "Income": "Доход",
+  "Outcome": "Расход",
+  "Amount": "Сумма",
+  "MinValue": "Минимальное значение",
+  "Create": "Создать",
+  "Description": "Описание",
+  "Desctiption_ChooseTitle": "Введите название описания",
+  "Categories_Empty": "Категорий пока нет",
+  "Categories_AddNew": "Добавить категорию",
+  "Categories_Choose": "Выберите категорию",
+  "Record_NewRecord": "Новая запись"
 }
