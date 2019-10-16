@@ -71,7 +71,7 @@
           v-if="$v.description.$dirty && !$v.description.required"
           class="helper-text invalid"
         >
-          Введите название описание
+          Введите название описания
           </span>
       </div>
 

@@ -4,6 +4,12 @@
   "SideBar_History": "History",
   "SideBar_Planning": "Planning",
   "SideBar_NewRecord": "New Record",
-  "SideBar_Categories": "Categories"
+  "SideBar_Categories": "Categories",
+  "Name": "Name",
+  "NameValidationBlank": "The name field can not be blank",
+  "AgreeTerms": "I agree",
+  "SignUp": "Sign up",
+  "Have account?": "Have an account?",
+  "Login": "Login!"
 }
 
