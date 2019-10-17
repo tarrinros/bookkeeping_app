@@ -9,11 +9,12 @@
   "Logout": "Logout",
   "Forward": "Forward",
   "Back": "Back",
+  "SignUp": "Sign up",
+  "Login": "Login!",
+  "Update": "Update",
   "NameValidationBlank": "The name field can not be blank",
   "AgreeTerms": "I agree",
-  "SignUp": "Sign up",
   "Have account?": "Have an account?",
-  "Login": "Login!",
   "Home_CurrencyCount": "Currency",
   "ExchangeCourse": "Exchange course",
   "Currency": "Currency",
@@ -31,7 +32,7 @@
   "Categories_AddNew": "Add the new one",
   "Categories_Choose": "Choose",
   "Record_NewRecord": "New record",
-  "History_RecordsHistory": "Records history",  
+  "History_RecordsHistory": "Records history",
   "Record_Empty": "There isn`t any records",
   "Record_AddNew": "Add the new one"
 }

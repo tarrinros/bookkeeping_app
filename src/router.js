@@ -12,6 +12,7 @@ const router = new Router({
       path: '/login',
       name: 'login',
       meta: { layout: 'empty' },
+      // Lazyloading for component
       component: () => import('./views/Login.vue')
     },
     {

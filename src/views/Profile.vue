@@ -28,7 +28,7 @@
       </div>
 
       <button class="btn waves-effect waves-light" type="submit">
-        Обновить
+        {{'Update' | localize}}
         <i class="material-icons right">send</i>
       </button>
     </form>
