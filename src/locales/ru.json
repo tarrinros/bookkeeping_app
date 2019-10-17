@@ -28,11 +28,14 @@
   "Create": "Создать",
   "Description": "Описание",
   "Description_ChooseTitle": "Введите название описания",
+  "Category": "Категория",
   "Categories_Empty": "Категорий пока нет",
   "Categories_AddNew": "Добавить категорию",
   "Categories_Choose": "Выберите категорию",
   "Record_NewRecord": "Новая запись",
   "History_RecordsHistory": "История записей",
   "Record_Empty": "Записей пока нет.",
-  "Record_AddNew": "Добавить первую"
+  "Record_AddNew": "Добавить первую",
+  "RecordDetail_History": "История",
+  "Record_SearchFail": "Не существует записи с ID"
 }

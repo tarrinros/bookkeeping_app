@@ -28,11 +28,14 @@
   "Create": "Create",
   "Description": "Description",
   "Description_ChooseTitle": "Please, choose the description title",
+  "Category": "Category",
   "Categories_Empty": "There isn`t any categories",
   "Categories_AddNew": "Add the new one",
   "Categories_Choose": "Choose",
   "Record_NewRecord": "New record",
   "History_RecordsHistory": "Records history",
   "Record_Empty": "There isn`t any records",
-  "Record_AddNew": "Add the new one"
+  "Record_AddNew": "Add the new one",
+  "RecordDetail_History": "History",
+  "Record_SearchFail": "There isn`t any record with ID"
 }
