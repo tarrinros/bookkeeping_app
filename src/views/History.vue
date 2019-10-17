@@ -67,7 +67,7 @@ export default {
       this.renderChart({
         labels: categories.map(c => c.title),
         datasets: [{
-          label: 'Траты по категориям',
+          label: localizeFilter('ExpensesCategories'),
           data: categories.map(c => {
             return this.records.reduce((total, r) => {
               if (r.categoryId === c.id && r.type === 'outcome') {

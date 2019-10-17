@@ -13,7 +13,7 @@
         </div>
       </main>
 
-      <div class="fixed-action-btn" v-tooltip="'Добавить новую запись'">
+      <div class="fixed-action-btn" v-tooltip="tooltip">
         <router-link class="btn-floating btn-large blue" to="/record">
           <i class="large material-icons">add</i>
         </router-link>
@@ -26,12 +26,14 @@
 import Navbar from '@/components/app/Navbar'
 import Sidebar from '@/components/app/Sidebar'
 import messages from '@/utils/messages'
+import localizeFilter from '@/filters/localize.filter'
 
 export default {
   name: 'main-layout',
   data: () => ({
     isOpen: true,
-    loading: true
+    loading: true,
+    tooltip: localizeFilter('Record_AddNew')
   }),
   async mounted () {
     if (!Object.keys(this.$store.getters.info).length) {
