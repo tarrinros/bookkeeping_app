@@ -71,7 +71,7 @@
           v-if="$v.description.$dirty && !$v.description.required"
           class="helper-text invalid"
         >
-          {{'Desctiption_ChooseTitle' | localize}}
+          {{'Description_ChooseTitle' | localize}}
           </span>
       </div>
 

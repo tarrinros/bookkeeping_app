@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page-title">
-      <h3>История записей</h3>
+      <h3>{{'History_RecordsHistory' | localize}}</h3>
     </div>
 
     <div class="history-chart">
@@ -11,8 +11,8 @@
     <Loader v-if="loading"/>
 
     <p v-else-if="!records.length" class="center">
-    Записей пока нет.
-    <router-link to="/record">Добавьте первую</router-link>
+    {{'Record_Empty' | localize}}
+    <router-link to="/record">{{'Record_AddNew' | localize}}</router-link>
     </p>
     <section v-else>
       <HistoryTable :records="items"/>
@@ -34,6 +34,7 @@
 import paginationMixin from '@/mixins/pagination.mixin'
 import HistoryTable from '@/components/HistoryTable'
 import { Pie } from 'vue-chartjs'
+import localizeFilter from '../filters/localize.filter'
 
 export default {
   name: 'history',

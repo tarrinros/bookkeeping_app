@@ -6,6 +6,9 @@
   "SideBar_NewRecord": "New Record",
   "SideBar_Categories": "Categories",
   "Name": "Name",
+  "Logout": "Logout",
+  "Forward": "Forward",
+  "Back": "Back",
   "NameValidationBlank": "The name field can not be blank",
   "AgreeTerms": "I agree",
   "SignUp": "Sign up",
@@ -23,9 +26,12 @@
   "MinValue": "Minimal value",
   "Create": "Create",
   "Description": "Description",
-  "Desctiption_ChooseTitle": "Please, choose the description title",
+  "Description_ChooseTitle": "Please, choose the description title",
   "Categories_Empty": "There isn`t any categories",
-  "Categories_AddNew": "Add a new one",
+  "Categories_AddNew": "Add the new one",
   "Categories_Choose": "Choose",
-  "Record_NewRecord": "New record"
+  "Record_NewRecord": "New record",
+  "History_RecordsHistory": "Records history",  
+  "Record_Empty": "There isn`t any records",
+  "Record_AddNew": "Add the new one"
 }
