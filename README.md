@@ -1,4 +1,5 @@
-# vue_crm
+# Bookkeeing web application
+based on VueJS and Vuex
 
 ## Project setup
 ```
