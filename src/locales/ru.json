@@ -24,6 +24,8 @@
   "Income": "Доход",
   "Outcome": "Расход",
   "Amount": "Сумма",
+  "Type": "Тип",
+  "Open": "Открыть",
   "MinValue": "Минимальное значение",
   "Create": "Создать",
   "Description": "Описание",
@@ -37,5 +39,6 @@
   "Record_Empty": "Записей пока нет.",
   "Record_AddNew": "Добавить первую",
   "RecordDetail_History": "История",
-  "Record_SearchFail": "Не существует записи с ID"
+  "Record_SearchFail": "Не существует записи с ID",
+  "Record_ShowRecord_Message": "Посмотреть запись"
 }

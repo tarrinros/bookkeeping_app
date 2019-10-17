@@ -61,7 +61,7 @@ export default {
           ...record,
           categoryName: categories.find(c => c.id === record.categoryId).title,
           typeClass: record.type === 'income' ? 'green' : 'red',
-          typeText: record.type === 'income' ? 'доход' : 'расход'
+          typeText: record.type === 'income' ? localizeFilter('Income') : localizeFilter('Outcome')
         }
       }))
       this.renderChart({

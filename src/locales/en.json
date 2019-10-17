@@ -24,6 +24,8 @@
   "Income": "Income",
   "Outcome": "Outcome",
   "Amount": "Amount",
+  "Type": "Type",
+  "Open": "Open",
   "MinValue": "Minimal value",
   "Create": "Create",
   "Description": "Description",
@@ -37,5 +39,6 @@
   "Record_Empty": "There isn`t any records",
   "Record_AddNew": "Add the new one",
   "RecordDetail_History": "History",
-  "Record_SearchFail": "There isn`t any record with ID"
+  "Record_SearchFail": "There isn`t any record with ID",
+  "Record_ShowRecord_Message": "Show record"
 }
