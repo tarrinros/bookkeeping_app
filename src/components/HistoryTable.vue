@@ -47,7 +47,6 @@ export default {
   },
   data: () => ({
     tooltip: localizeFilter('Record_ShowRecord_Message'),
-    cats:[],
     currentSort:'name',
     currentSortDir:'asc',
   }),
@@ -66,7 +65,7 @@ export default {
         let modifier = 1;
         if(this.currentSortDir === 'desc') modifier = -1;
         if(a[this.currentSort] < b[this.currentSort]) return -1 * modifier;
-        if(a[this.currentSort] > b[this.currentSort]) return 1 * modifier;
+        if(a[this.currentSort] > b[this.currentSort]) return modifier;
         return 0;
       });
     }
