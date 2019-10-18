@@ -27,6 +27,7 @@
         :page-class="'waves-effect'"
       />
     </section>
+
   </div>
 </template>
 

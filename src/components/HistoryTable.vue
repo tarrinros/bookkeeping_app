@@ -3,16 +3,16 @@
     <thead>
     <tr>
       <th>#</th>
-      <th>{{'Amount' | localize}}</th>
-      <th>{{'Date' | localize}}</th>
-      <th>{{'Category' | localize}}</th>
-      <th>{{'Type' | localize}}</th>
+      <th @click="sort('amount')">{{'Amount' | localize}}</th>
+      <th @click="sort('date')">{{'Date' | localize}}</th>
+      <th @click="sort('category')">{{'Category' | localize}}</th>
+      <th @click="sort('type')">{{'Type' | localize}}</th>
       <th>{{'Open' | localize}}</th>
     </tr>
     </thead>
 
     <tbody>
-    <tr v-for="(record, index) of records" :key="record.id">
+    <tr v-for="(record, index) of sortedRecords" :key="record.id">
       <td>{{index + 1}}</td>
       <td>{{record.amount | currency}}</td>
       <td>{{record.date | date('datetime')}}</td>
@@ -46,7 +46,30 @@ export default {
     }
   },
   data: () => ({
-    tooltip: localizeFilter('Record_ShowRecord_Message')
-  })
+    tooltip: localizeFilter('Record_ShowRecord_Message'),
+    cats:[],
+    currentSort:'name',
+    currentSortDir:'asc',
+  }),
+  methods:{
+    sort (s) {
+      //if s == current sort, reverse
+      if(s === this.currentSort) {
+        this.currentSortDir = this.currentSortDir === 'asc' ? 'desc' : 'asc'
+      }
+      this.currentSort = s;
+    }
+  },
+  computed: {
+    sortedRecords() {
+      return this.records.sort((a,b) => {
+        let modifier = 1;
+        if(this.currentSortDir === 'desc') modifier = -1;
+        if(a[this.currentSort] < b[this.currentSort]) return -1 * modifier;
+        if(a[this.currentSort] > b[this.currentSort]) return 1 * modifier;
+        return 0;
+      });
+    }
+  }
 }
 </script>
