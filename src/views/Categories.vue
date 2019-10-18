@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page-title">
-      <h3>{{'Category' | localize}}</h3>
+      <h3>{{'Categories_Title' | localize}}</h3>
     </div>
     <section>
       <Loader v-if="loading" />
@@ -26,6 +26,11 @@ import CategoryEdit from '@/components/CategoryEdit'
 
 export default {
   name: 'categories',
+  metaInfo () {
+    return {
+      title: this.$title('Categories_Title')
+    }
+  },
   data: () => ({
     categories: [],
     loading: true,

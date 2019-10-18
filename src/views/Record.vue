@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page-title">
-      <h3>{{'Record_NewRecord' | localize}}</h3>
+      <h3>{{'Record_NewRecordTitle' | localize}}</h3>
     </div>
 
     <Loader v-if="loading"/>
@@ -89,6 +89,11 @@ import {mapGetters} from 'vuex'
 
 export default {
   name: 'record',
+  metaInfo () {
+    return {
+      title: this.$title('Record_NewRecordTitle')
+    }
+  },
   data: () => ({
     select: null,
     categories: [],
