@@ -21,8 +21,8 @@
         v-model="page"
         :page-count="pageCount"
         :click-handler="pageChangeHandler"
-        :prev-text="back"
-        :next-text="forward"
+        :prev-text="'Back' | localize"
+        :next-text="'Forward' | localize"
         :container-class="'pagination'"
         :page-class="'waves-effect'"
       />
@@ -43,8 +43,6 @@ export default {
   data: () => ({
     loading: true,
     records: [],
-    back: localizeFilter('Back'),
-    forward: localizeFilter('Forward')
   }),
   async mounted () {
     this.records = await this.$store.dispatch('fetchRecords')
